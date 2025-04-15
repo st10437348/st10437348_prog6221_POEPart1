@@ -1,4 +1,5 @@
 ﻿using System.Media;
+using System.Runtime.InteropServices;
 
 namespace CyberChatBot
 {
@@ -124,9 +125,16 @@ namespace CyberChatBot
         {
             try
             {
-                string filePath = "Audio/welcome.wav";
-                SoundPlayer player = new SoundPlayer(filePath);
-                player.PlaySync();
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    string filePath = "Audio/welcome.wav";
+                    SoundPlayer player = new SoundPlayer(filePath);
+                    player.PlaySync();
+                }
+                else
+                {
+                    Console.WriteLine("Voice greeting is not supported on this platform.");
+                }
             }
             catch (Exception ex)
             {
@@ -153,6 +161,7 @@ namespace CyberChatBot
 ");
             Console.ResetColor();
         }
+
         static void PrintDivider()
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -174,8 +183,8 @@ namespace CyberChatBot
             }
             Console.WriteLine();
         }
-
     }
 }
+
 
 
