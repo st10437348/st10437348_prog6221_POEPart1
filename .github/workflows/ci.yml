@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: CI
+=======
+name: CI Workflow
+>>>>>>> dcf40a624e1da1fa892e17044851b7410dfc2a8b
 
 on:
   push:
@@ -10,25 +14,56 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
+    # Checkout the repository
     - name: Checkout code
       uses: actions/checkout@v2
 
+<<<<<<< HEAD
+=======
+    # Set up .NET SDK (ensure you're using the correct version for your project)
+>>>>>>> dcf40a624e1da1fa892e17044851b7410dfc2a8b
     - name: Set up .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '9.0.x'  
 
+    # Restore dependencies using the solution file
     - name: Restore dependencies
+<<<<<<< HEAD
       run: dotnet restore
 
     - name: Build
       run: dotnet build --configuration Release
+=======
+      run: dotnet restore CyberChatBot/CyberChatBot.sln
 
+    # Build the solution (this checks for syntax errors and compilation issues)
+    - name: Build
+      run: dotnet build CyberChatBot/CyberChatBot.sln --configuration Release
+>>>>>>> dcf40a624e1da1fa892e17044851b7410dfc2a8b
+
+    # Run tests (if you have tests)
     - name: Run tests
+<<<<<<< HEAD
       run: dotnet test --no-build --verbosity normal
+=======
+      run: dotnet test CyberChatBot/CyberChatBot.sln --no-build --configuration Release
+>>>>>>> dcf40a624e1da1fa892e17044851b7410dfc2a8b
 
+    # Check code formatting (optional but recommended)
     - name: Check code formatting
+<<<<<<< HEAD
       run: dotnet format --check
+=======
+      run: dotnet format CyberChatBot/CyberChatBot.sln --verify-no-changes --verbosity normal
+
+
+
+
+
+
+
+>>>>>>> dcf40a624e1da1fa892e17044851b7410dfc2a8b
