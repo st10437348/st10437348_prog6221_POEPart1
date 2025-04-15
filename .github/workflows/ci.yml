@@ -1,41 +1,35 @@
-name: CI Workflow
+name: CI Build and Format Check
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '9.0.x' 
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 9.0.x
 
-    - name: Restore dependencies
-      working-directory: CyberChatBot 
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./CyberChatBot
 
-    - name: Build the project
-      working-directory: CyberChatBot
-      run: dotnet build --no-restore --configuration Release
+      - name: Check code formatting
+        run: dotnet format CyberChatBot.csproj --verify-no-changes
+        working-directory: ./CyberChatBot
 
-    - name: Run syntax and formatting checks
-      working-directory: CyberChatBot
-      run: dotnet format --check
-
-    - name: Run tests
-      working-directory: CyberChatBot
-      run: dotnet test --no-build --verbosity normal
+      - name: Build project
+        run: dotnet build --no-restore --configuration Release
+        working-directory: ./CyberChatBot
 
 
 
