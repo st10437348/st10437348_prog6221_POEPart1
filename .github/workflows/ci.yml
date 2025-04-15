@@ -38,12 +38,3 @@ jobs:
     # Check code formatting (optional but recommended)
     - name: Check code formatting
       run: dotnet format CyberChatBot/CyberChatBot.sln --verify-no-changes --verbosity normal
-
-
-
-
-
-
-
-
->>>>>>> dcf40a624e1da1fa892e17044851b7410dfc2a8b
