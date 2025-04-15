@@ -1,37 +1,38 @@
-name: CI Build and Format Check
-
+name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main  
 
 jobs:
   build:
-    runs-on: windows-latest
-
-    defaults:
-      run:
-        working-directory: CyberChatBot/CyberChatBot
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: '9.0.x'  
 
     - name: Restore dependencies
-      run: dotnet restore CyberChatBot.csproj
+      run: dotnet restore
 
-    - name: Build the project
-      run: dotnet build CyberChatBot.csproj --no-restore
+    - name: Build
+      run: dotnet build --configuration Release
+
+    - name: Run tests
+      run: dotnet test --no-build --verbosity normal
 
     - name: Check code formatting
-      run: dotnet format CyberChatBot.csproj --verify-no-changes
+      run: dotnet format --check
+
 
 
 
