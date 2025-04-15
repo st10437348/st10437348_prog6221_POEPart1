@@ -23,21 +23,22 @@ jobs:
       with:
         dotnet-version: '6.0' # Adjust to the version you're using
 
-    # Restore dependencies
+    # Restore dependencies using the solution file
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore CyberChatBot/CyberChatBot.sln
 
-    # Build the project (this checks for syntax errors and compilation issues)
+    # Build the solution (this checks for syntax errors and compilation issues)
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build CyberChatBot/CyberChatBot.sln --configuration Release
 
     # Run tests (if you have tests)
     - name: Run tests
-      run: dotnet test --no-build --configuration Release
+      run: dotnet test CyberChatBot/CyberChatBot.sln --no-build --configuration Release
 
     # Check code formatting (optional but recommended)
     - name: Check code formatting
-      run: dotnet format --check --verbosity normal
+      run: dotnet format --check --verbosity normal CyberChatBot/CyberChatBot.sln
+
 
 
 
