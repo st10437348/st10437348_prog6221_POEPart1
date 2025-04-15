@@ -20,16 +20,14 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
-        working-directory: ./CyberChatBot
+        run: dotnet restore CyberChatBot/CyberChatBot.csproj
 
       - name: Check code formatting
-        run: dotnet format CyberChatBot.csproj --verify-no-changes
-        working-directory: ./CyberChatBot
+        run: dotnet format CyberChatBot/CyberChatBot.csproj --verify-no-changes
 
       - name: Build project
-        run: dotnet build --no-restore --configuration Release
-        working-directory: ./CyberChatBot
+        run: dotnet build CyberChatBot/CyberChatBot.csproj --no-restore --configuration Release
+
 
 
 
