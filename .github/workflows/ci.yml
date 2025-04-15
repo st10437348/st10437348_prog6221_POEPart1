@@ -13,29 +13,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the repository
+
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Set up .NET SDK (ensure you're using the correct version for your project)
+   
     - name: Set up .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0' # Adjust to the version you're using
+        dotnet-version: '9.0' 
 
-    # Restore dependencies using the solution file
+
     - name: Restore dependencies
       run: dotnet restore CyberChatBot/CyberChatBot.sln
 
-    # Build the solution (this checks for syntax errors and compilation issues)
     - name: Build
       run: dotnet build CyberChatBot/CyberChatBot.sln --configuration Release
 
-    # Run tests (if you have tests)
     - name: Run tests
       run: dotnet test CyberChatBot/CyberChatBot.sln --no-build --configuration Release
 
-    # Check code formatting (optional but recommended)
     - name: Check code formatting
       run: dotnet format --check --verbosity normal CyberChatBot/CyberChatBot.sln
 
