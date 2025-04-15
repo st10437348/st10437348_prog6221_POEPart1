@@ -13,29 +13,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout code from the repository
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Set up .NET SDK
     - name: Set up .NET SDK
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '9.0'
 
-    # Restore dependencies
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: ./CyberChatBot 
 
-    # Build the project
     - name: Build the project
       run: dotnet build --configuration Release
+      working-directory: ./CyberChatBot  
 
-    # Run tests
     - name: Run tests
       run: dotnet test --configuration Release
+      working-directory: ./CyberChatBot  
 
-    # Code formatting check (using dotnet-format tool)
     - name: Check code formatting
       run: dotnet format --check
+      working-directory: ./CyberChatBot  
 
