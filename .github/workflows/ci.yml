@@ -19,17 +19,26 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '9.0.x' # Matches your .NET target version
+
+    - name: Navigate to project directory
+      working-directory: CyberChatBot # Adjust this to the folder containing your .csproj or .sln file
+      run: echo "Navigating to project directory"
 
     - name: Restore dependencies
+      working-directory: CyberChatBot
       run: dotnet restore
 
     - name: Build the project
+      working-directory: CyberChatBot
       run: dotnet build --no-restore --configuration Release
 
     - name: Run syntax and formatting checks
+      working-directory: CyberChatBot
       run: dotnet format --check
 
     - name: Run tests
+      working-directory: CyberChatBot
       run: dotnet test --no-build --verbosity normal
+
 
