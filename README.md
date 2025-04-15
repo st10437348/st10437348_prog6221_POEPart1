@@ -36,4 +36,5 @@ To exit the chat, type: exit
 References:
 
 Troelsen, A. and Japikse, P., 2022. Pro C# 10 with .NET 6: Foundational Principles and Practices in Programming. 11th ed. Berkeley, CA: Apress.
+
 2022. Is there a way to make all text appear slowly in console?. Reddit. [online] Available at: https://www.reddit.com/r/learncsharp/comments/zopps5/is_there_a_way_to_make_all_text_appear_slowly_in/ [Accessed 15 Apr. 2025].
