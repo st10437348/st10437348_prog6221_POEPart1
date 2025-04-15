@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qMYdYVgPqXo=",
+  "dgSpecHash": "xCCAQIbMpRI=",
   "success": true,
-  "projectFilePath": "C:\\Desktop\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\CyberChatBot.csproj",
+  "projectFilePath": "C:\\Desktop\\st10437348_prog6221_Part1\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\CyberChatBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexo\\.nuget\\packages\\system.windows.extensions\\9.0.4\\system.windows.extensions.9.0.4.nupkg.sha512"
   ],

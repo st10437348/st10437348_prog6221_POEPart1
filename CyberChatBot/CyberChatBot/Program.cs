@@ -10,6 +10,17 @@ namespace CyberChatBot
 
             PlayVoiceGreeting();
             DisplayAsciiArt();
+            PrintDivider();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Hi there! What is your name? ");
+            Console.ResetColor();
+            string userName = Console.ReadLine();
+
+            Console.Clear();
+            DisplayAsciiArt();
+            SimulateTyping($"\nNice to meet you, {userName}! I'm your Cybersecurity Awareness Bot.");
+            SimulateTyping("Ask me anything about cybersecurity or type 'exit' to leave.");
         }
 
         static void PlayVoiceGreeting()
@@ -45,7 +56,25 @@ namespace CyberChatBot
 ");
             Console.ResetColor();
         }
+
+        static void PrintDivider()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("\n" + new string('-', 60));
+            Console.ResetColor();
+        }
+
+        static void SimulateTyping(string message)
+        {
+            foreach (char c in message)
+            {
+                Console.Write(c);
+                Thread.Sleep(30);
+            }
+            Console.WriteLine();
+        }
     }
 }
+
 
 

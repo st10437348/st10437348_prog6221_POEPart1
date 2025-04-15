@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Desktop\\st10437348_prog6221_POEPart1\\CyberChatBot\\",
+  "WorkspaceRootPath": "C:\\Desktop\\st10437348_prog6221_Part1\\st10437348_prog6221_POEPart1\\CyberChatBot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8EBE6A3-3204-41AF-848A-AC63306EB59D}|CyberChatBot\\CyberChatBot.csproj|c:\\desktop\\st10437348_prog6221_poepart1\\cyberchatbot\\cyberchatbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8EBE6A3-3204-41AF-848A-AC63306EB59D}|CyberChatBot\\CyberChatBot.csproj|solutionrelative:cyberchatbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Desktop\\st10437348_prog6221_Part1\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CyberChatBot\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Desktop\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\Program.cs",
+              "DocumentMoniker": "C:\\Desktop\\st10437348_prog6221_Part1\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\Program.cs",
               "RelativeDocumentMoniker": "CyberChatBot\\Program.cs",
-              "ToolTip": "C:\\Desktop\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\Program.cs",
+              "ToolTip": "C:\\Desktop\\st10437348_prog6221_Part1\\st10437348_prog6221_POEPart1\\CyberChatBot\\CyberChatBot\\Program.cs",
               "RelativeToolTip": "CyberChatBot\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T09:18:28.308Z",
               "EditorCaption": ""
