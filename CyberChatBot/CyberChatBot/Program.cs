@@ -9,11 +9,11 @@ namespace CyberChatBot
         {
             Console.Title = "CyberChatBot";
 
-            DisplayAsciiArt(); 
-            PlayVoiceGreeting(); 
+            DisplayAsciiArt();
+            PlayVoiceGreeting();
 
-            Console.Clear(); 
-            DisplayAsciiArt(); 
+            Console.Clear();
+            DisplayAsciiArt();
 
             PrintDivider();
             Console.ForegroundColor = ConsoleColor.White;
@@ -50,13 +50,11 @@ namespace CyberChatBot
 
                     SimulateTyping("Thanks for sharing!");
                 }
-
                 else if (input.Contains("purpose"))
                 {
                     SimulateTyping("I'm here to help you learn how to protect yourself online.");
                 }
-
-                //Infomation on what the chat bot can do
+                // Information on what the chat bot can do
                 else if (input.Contains("what can i ask") || input.Contains("what can i ask you about"))
                 {
                     SimulateTyping("You can ask me about password safety, phishing scams and safe browsing.");
@@ -97,9 +95,7 @@ namespace CyberChatBot
                         "- What does HTTPS mean?"
                     );
                 }
-
-
-                //Passowrd related questions
+                // Password-related questions
                 else if (input.Contains("how often") && input.Contains("change") && input.Contains("password"))
                 {
                     SimulateTyping("It's a good idea to change your passwords every 3 to 6 months or immediately if there's a data breach.");
@@ -124,9 +120,7 @@ namespace CyberChatBot
                 {
                     SimulateTyping("Create strong passwords using at least 12 characters, mixing letters, numbers and symbols.");
                 }
-
-                //Phishing related questions
-
+                // Phishing-related questions
                 else if (input.Contains("examples of phishing"))
                 {
                     SimulateTyping("Examples include fake emails from your bank, messages claiming you've won a prize or urgent password reset requests.");
@@ -143,8 +137,7 @@ namespace CyberChatBot
                 {
                     SimulateTyping("Phishing is a cyber attack where attackers trick you into revealing personal information through fake messages or websites.");
                 }
-
-                //Safe browsing related questions
+                // Safe browsing-related questions
                 else if (input.Contains("safe browsing"))
                 {
                     SimulateTyping("Safe browsing means taking steps to protect yourself from malware, scams and harmful content while online.");
@@ -177,9 +170,9 @@ namespace CyberChatBot
                 {
                     string filePath = "Audio/welcome.wav";
                     SoundPlayer player = new SoundPlayer(filePath);
-                    player.Play(); 
+                    player.Play();
 
-                    Thread.Sleep(7000); 
+                    Thread.Sleep(7000);
                 }
                 else
                 {
@@ -235,6 +228,7 @@ namespace CyberChatBot
         }
     }
 }
+
 
 
 
