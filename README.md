@@ -30,6 +30,7 @@ General Prompts
 - What is your purpose?
 - How are you?
 - What can I ask you about?
+- What can do know about passwords/phishing/safe browsing?
 
 To exit the chat, type: exit
 

@@ -9,11 +9,14 @@ namespace CyberChatBot
         {
             Console.Title = "CyberChatBot";
 
-            PlayVoiceGreeting();
-            DisplayAsciiArt();
-            PrintDivider();
+            DisplayAsciiArt(); 
+            PlayVoiceGreeting(); 
 
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Clear(); 
+            DisplayAsciiArt(); 
+
+            PrintDivider();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Hi there! What is your name? ");
             Console.ResetColor();
             string userName = Console.ReadLine();
@@ -26,7 +29,7 @@ namespace CyberChatBot
             while (true)
             {
                 PrintDivider();
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("\nYou: ");
                 Console.ResetColor();
                 string input = Console.ReadLine().ToLower();
@@ -37,49 +40,93 @@ namespace CyberChatBot
                 }
                 else if (input.Contains("how are you"))
                 {
-                    SimulateTyping($"I'm great, thank you for asking {userName}!");
+                    SimulateTyping("I'm doing great, thanks for asking!");
+                    SimulateTyping($"And how about you, {userName}?");
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("\nYou: ");
+                    Console.ResetColor();
+                    Console.ReadLine();
+
+                    SimulateTyping("Thanks for sharing!");
                 }
 
                 else if (input.Contains("purpose"))
                 {
                     SimulateTyping("I'm here to help you learn how to protect yourself online.");
                 }
+
+                //Infomation on what the chat bot can do
                 else if (input.Contains("what can i ask") || input.Contains("what can i ask you about"))
                 {
                     SimulateTyping("You can ask me about password safety, phishing scams and safe browsing.");
+                    SimulateTyping(
+                        "For more specific topics, try asking:\n" +
+                        "- What do you know about passwords?\n" +
+                        "- What do you know about phishing?\n" +
+                        "- What do you know about safe browsing?"
+                    );
+                }
+                else if (input.Contains("what do you know about passwords"))
+                {
+                    SimulateTyping(
+                        "You can ask me questions like:\n" +
+                        "- What is a strong password?\n" +
+                        "- How often should I change my password?\n" +
+                        "- Is it safe to save passwords in the browser?\n" +
+                        "- Should I reuse passwords?\n" +
+                        "- What is a password manager?"
+                    );
+                }
+                else if (input.Contains("what do you know about phishing"))
+                {
+                    SimulateTyping(
+                        "You can ask me things like:\n" +
+                        "- What is phishing?\n" +
+                        "- What are examples of phishing?\n" +
+                        "- How can I avoid phishing?\n" +
+                        "- How do I report phishing?"
+                    );
+                }
+                else if (input.Contains("what do you know about safe browsing"))
+                {
+                    SimulateTyping(
+                        "You can ask questions like:\n" +
+                        "- What is safe browsing?\n" +
+                        "- How can I browse safely?\n" +
+                        "- What does HTTPS mean?"
+                    );
                 }
 
-                // PASSWORD related questions
-                else if (input.Contains("password"))
-                {
-                    SimulateTyping("Create strong passwords using at least 12 characters, mixing letters, numbers and symbols.");
-                }
-                else if (input.Contains("password manager"))
-                {
-                    SimulateTyping("Password managers help you generate and store strong, unique passwords securely for each website.");
-                }
-                else if (input.Contains("reuse passwords"))
-                {
-                    SimulateTyping("Avoid reusing passwords across multiple sites. If one account is compromised, others could be at risk.");
-                }
+
+                //Passowrd related questions
                 else if (input.Contains("how often") && input.Contains("change") && input.Contains("password"))
                 {
                     SimulateTyping("It's a good idea to change your passwords every 3 to 6 months or immediately if there's a data breach.");
                 }
                 else if (input.Contains("secure password") || input.Contains("strong password"))
                 {
-                    SimulateTyping("A secure password should include uppercase, lowercase, numbers and special symbols. Example: Ch33se$2025!");
+                    SimulateTyping($"A secure password should include uppercase, lowercase, numbers and special symbols. Example: {userName}@It2025!");
                 }
-                else if (input.Contains("save passwords in browser"))
+                else if (input.Contains("save passwords in the browser"))
                 {
                     SimulateTyping("It's safer to use a dedicated password manager than saving passwords in your browser.");
                 }
-
-                // PHISHING related questions
-                else if (input.Contains("what is phishing"))
+                else if (input.Contains("reuse passwords"))
                 {
-                    SimulateTyping("Phishing is a cyber attack where attackers trick you into revealing personal information through fake messages or websites.");
+                    SimulateTyping("Avoid reusing passwords across multiple sites. If one account is compromised, others could be at risk.");
                 }
+                else if (input.Contains("password manager"))
+                {
+                    SimulateTyping("Password managers help you generate and store strong, unique passwords securely for each website.");
+                }
+                else if (input.Contains("password"))
+                {
+                    SimulateTyping("Create strong passwords using at least 12 characters, mixing letters, numbers and symbols.");
+                }
+
+                //Phishing related questions
+
                 else if (input.Contains("examples of phishing"))
                 {
                     SimulateTyping("Examples include fake emails from your bank, messages claiming you've won a prize or urgent password reset requests.");
@@ -92,13 +139,16 @@ namespace CyberChatBot
                 {
                     SimulateTyping("You can report phishing by forwarding the message to your IT department or national cybercrime agency.");
                 }
+                else if (input.Contains("phishing"))
+                {
+                    SimulateTyping("Phishing is a cyber attack where attackers trick you into revealing personal information through fake messages or websites.");
+                }
 
-                // SAFE BROWSING related questions
+                //Safe browsing related questions
                 else if (input.Contains("safe browsing"))
                 {
                     SimulateTyping("Safe browsing means taking steps to protect yourself from malware, scams and harmful content while online.");
                 }
-
                 else if (input.Contains("how to browse safely") || input.Contains("browse safely"))
                 {
                     SimulateTyping("Use updated browsers, ad-blockers, antivirus software, look for https:// in URL and avoid downloading unknown files.");
@@ -107,8 +157,6 @@ namespace CyberChatBot
                 {
                     SimulateTyping("HTTPS means the site is secured with encryption. Always look for 'https://' in the URL before entering sensitive info.");
                 }
-
-                // Exit
                 else if (input == "exit")
                 {
                     SimulateTyping($"Goodbye {userName}! Hope I helped you!");
@@ -129,7 +177,9 @@ namespace CyberChatBot
                 {
                     string filePath = "Audio/welcome.wav";
                     SoundPlayer player = new SoundPlayer(filePath);
-                    player.PlaySync();
+                    player.Play(); 
+
+                    Thread.Sleep(7000); 
                 }
                 else
                 {
